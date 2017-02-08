@@ -24,7 +24,7 @@
     $app->post("/add-places", function() use ($app) {
         $place = new Place($_POST['place']);
         $place->save();
-        return $app['twig']->render('add-places.html.twig');
+        return $app['twig']->render('add-places.html.twig', array('newPlace' => $place));
 
     });
 
